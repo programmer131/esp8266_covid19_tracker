@@ -6,10 +6,12 @@ StaticJsonDocument<200> json_string;
 
 String inputString = "";         // a String to hold incoming data
 bool stringComplete = false;  // whether the string is complete
+const int analogOutPin = 9; // LCD Vo pin to set contrast
 
 void setup()
 {
   Serial.begin(9600);
+  analogWrite(analogOutPin, 210);
   inputString.reserve(200);
   lcd.begin(20, 4);
   delay(100);
