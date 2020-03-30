@@ -14,6 +14,13 @@ const char * myWriteAPIKey = "TX0H9ETWOCM0BQI3";
 // Fingerprint for demo URL, expires on June 2, 2021, needs to be updated well before this date
 const uint8_t fingerprint[20] = {0x7b,0x00,0x29,0x73,0x45,0x13,0xa3,0xf7,0x95,0x84,0x42,0xea,0xe0,0x28,0x1b,0xf4,0x0d,0xb8,0x11,0x53};
 StaticJsonDocument<200> json_string;
+long cases;
+long deaths;
+long recovered;
+long active_cases;
+bool upload_to_thingspeak=false;
+String payload="";      
+
 
 void setup() {  
   Serial.begin(9600);
@@ -22,12 +29,7 @@ void setup() {
   Serial.println("Wifi connected:..)");
   ThingSpeak.begin(client1);
 }
-long cases;
-long deaths;
-long recovered;
-long active_cases;
-bool upload_to_thingspeak=false;
-String payload="";      
+
 void loop() {
     std::unique_ptr<BearSSL::WiFiClientSecure>client(new BearSSL::WiFiClientSecure);
     client->setFingerprint(fingerprint);
