@@ -7,3 +7,4 @@ If LCD don't display count, reset ESP-01 after connecting to Arduino UNO.
 
 ThingSpeak channel: https://thingspeak.com/channels/1027684
 
+I just noticied, they changed JSON response, now there are many more paramters inside, so need to set buffer size accordingly. i'll update code when get time.  
