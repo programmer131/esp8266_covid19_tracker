@@ -2,7 +2,7 @@
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7); /// REGISTER SELECT PIN,ENABLE PIN,D4 PIN,D5 PIN, D6 PIN, D7 PIN
-StaticJsonDocument<200> json_string;
+StaticJsonDocument<400> json_string;
 
 String inputString = "";         // a String to hold incoming data
 bool stringComplete = false;  // whether the string is complete
@@ -12,7 +12,7 @@ void setup()
 {
   Serial.begin(9600);
   analogWrite(analogOutPin, 210);
-  inputString.reserve(200);
+  inputString.reserve(400);
   lcd.begin(20, 4);
   delay(100);
   lcd.setCursor(2, 1);
