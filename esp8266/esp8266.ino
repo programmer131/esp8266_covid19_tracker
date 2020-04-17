@@ -39,7 +39,7 @@ void loop() {
     Serial.print("[HTTPS] begin...\n");
     #endif
     
-    if (https.begin(*client, "https://corona.lmao.ninja/all"))
+    if (https.begin(*client, "https://corona.lmao.ninja/v2/all"))
     {
       #ifdef DEBUG
       Serial.print("[HTTPS] GET...\n");
